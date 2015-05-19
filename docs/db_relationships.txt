@@ -1,0 +1,24 @@
+
+-Companies have many orders; each order belongs to only one company (one per month)
+
+-Months have many orders; each order (for each company) has only one month
+
+-Orders have many lines (or line-item); each line belongs to only one order
+
+-Lines have one supply each; each supply can belong to multiple lines
+
+Company has_many :orders
+
+Order has_one :company
+
+Month has_many :orders
+
+Order has_one :month
+
+Order has_many :lines
+
+Line has_one :order
+
+Line has_one :supply
+
+Supply has_many :lines (i think.)
