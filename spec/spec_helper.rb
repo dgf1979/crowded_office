@@ -18,6 +18,6 @@ RSpec.configure do |config|
     #optionally do something before each test
   end
   config.after(:each) do
-    #optionally do something after each test
+    Company.all.each { |company| company.destroy }
   end
 end
