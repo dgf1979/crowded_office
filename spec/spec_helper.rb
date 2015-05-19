@@ -19,5 +19,8 @@ RSpec.configure do |config|
   end
   config.after(:each) do
     Company.all.each { |company| company.destroy }
+    Order.all.each { |order| order.destroy }
+    Line.all.each { |line| line.destroy }
+    Supply.all.each { |supply| supply.destroy }
   end
 end
