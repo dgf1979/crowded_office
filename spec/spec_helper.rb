@@ -18,6 +18,9 @@ RSpec.configure do |config|
     #optionally do something before each test
   end
   config.after(:each) do
-    #optionally do something after each test
+    Company.all.each { |company| company.destroy }
+    Order.all.each { |order| order.destroy }
+    Line.all.each { |line| line.destroy }
+    Supply.all.each { |supply| supply.destroy }
   end
 end

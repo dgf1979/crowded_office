@@ -1,3 +1,3 @@
-class Month < ActiveRecord::Base
-  has_many :orders
-end
+# class Month < ActiveRecord::Base
+#   has_many :orders
+# end
