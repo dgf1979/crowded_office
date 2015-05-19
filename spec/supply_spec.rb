@@ -8,4 +8,9 @@ describe(Supply) do
     Supply.create(name: 'Red Swingline Stapler')
     expect(Supply.all.count).to(eq(1))
   end
+
+  it('sets unit price to a dollar if none is set') do
+    stapler = Supply.create(name: 'Red Swingline Stapler')
+    expect(stapler.unit_price).to(eq(1.0))
+  end
 end
