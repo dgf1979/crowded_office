@@ -1,1 +1,10 @@
-This page will contain information about an individual company and their orders.
+<h1> <%= @company.name %> </h1>
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-8">
+        <h4>Orders</h4>
+        <% @company.orders.each do |order| %>
+          <%= order.month_id %>
+        <% end %>
+      </div>
+    </div>
