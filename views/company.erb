@@ -1,10 +1,11 @@
 <h1> <%= @company.name %> </h1>
 
-    <div class="row">
-      <div class="col-sm-8 col-sm-8">
-        <h4>Orders</h4>
-        <% @company.orders.each do |order| %>
-          <%= order.month_id %>
-        <% end %>
-      </div>
-    </div>
+  <div class="company_orders">
+    <h4>Orders</h4>
+      <% @company.orders.each do |order| %>
+        <% lines = order.lines %>
+        <%= order.lines %>
+      <% end %>
+    <h4>Lines</h4>
+      <% lines.each do { lines.supply } %>
+  </div>
