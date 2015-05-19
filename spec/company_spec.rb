@@ -9,7 +9,7 @@ describe(Company) do
 
   it('verifies that we can create a company, add an order, add a line to that order and finally have that line contain a supply') do
     epicodus = Company.create({name: 'Epicodus'})
-    order = Order.create
+    order = Order.create(month_id: 4)
     epicodus.orders.push(order)
     supply = Supply.create(name: 'Bic Pens')
     line = order.lines.create(quantity: 20, supply_id: supply.id)
