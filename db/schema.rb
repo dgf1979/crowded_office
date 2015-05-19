@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519184830) do
+ActiveRecord::Schema.define(version: 20150519205935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20150519184830) do
   end
 
   create_table "companies_orders", force: :cascade do |t|
-    t.integer "companie_id"
+    t.integer "company_id"
     t.integer "order_id"
   end
 
-  add_index "companies_orders", ["companie_id"], name: "index_companies_orders_on_companie_id", using: :btree
+  add_index "companies_orders", ["company_id"], name: "index_companies_orders_on_company_id", using: :btree
   add_index "companies_orders", ["order_id"], name: "index_companies_orders_on_order_id", using: :btree
 
   create_table "lines", force: :cascade do |t|
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20150519184830) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "lines_orders", force: :cascade do |t|
+    t.integer "line_id"
+    t.integer "order_id"
+  end
+
+  add_index "lines_orders", ["line_id"], name: "index_lines_orders_on_line_id", using: :btree
+  add_index "lines_orders", ["order_id"], name: "index_lines_orders_on_order_id", using: :btree
 
   create_table "months", force: :cascade do |t|
     t.string   "name"
@@ -48,14 +56,6 @@ ActiveRecord::Schema.define(version: 20150519184830) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "orders_lines", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "line_id"
-  end
-
-  add_index "orders_lines", ["line_id"], name: "index_orders_lines_on_line_id", using: :btree
-  add_index "orders_lines", ["order_id"], name: "index_orders_lines_on_order_id", using: :btree
 
   create_table "supplies", force: :cascade do |t|
     t.string   "name"
