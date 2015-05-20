@@ -39,7 +39,8 @@ end
 #add an order to a company with POST (CREATE)
 post('/companies/:company_id/orders') do |company_id|
   company = Company.find(company_id)
-  order = company.orders.create(month: params['month'])
+  order = Order.create(month: params['month'].to_i, company_id: company.id)
+  company.orders.push(order)
   redirect to("/companies/#{company_id}/orders/#{order.id}")
 end
 
