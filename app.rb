@@ -12,7 +12,7 @@ end
 
 #show a specific company and allow to add orders
 get('/') do
-erb(:index)
+  erb(:index)
 end
 
 #show avail. companies and have method to add/select one (READ)
@@ -29,6 +29,7 @@ end
 #show a specific company and allow them to create a new order or view old orders (READ)
 get('/companies/:company_id') do |company_id|
   @company = Company.find(company_id)
+  erb(:company)
 end
 
 #add an order to a company with POST (CREATE)

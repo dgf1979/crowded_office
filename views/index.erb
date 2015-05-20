@@ -1,7 +1,7 @@
 <h1> Welcome to Crowded Office </h1>
 
 <div class='company_dropdown'></div>
-  <a href="/companies/add">Create a New Company</a>
+  <a href="/companies">Create a New Company</a>
 </div>
 
 <div>
@@ -32,12 +32,4 @@
     <p>content</p>
   </div>
 
-</div>
-
-<div class='company_list'>
-    <% Company.all do |company| %>
-      <% @company.each do |company| %>
-        <%= company.name %>
-      <% end %>
-    <% end %>
 </div>
