@@ -1,13 +1,21 @@
 <h1> <%= @company.name %> </h1>
 
-  <div class="company_orders">
-    <h4>Orders</h4>
-      <% @company.orders.each do |order| %>
-        <% lines = order.lines %>
-        <%= order.lines %>
+<div class="company_orders">
+  <h4>Order Lines:</h4>
+    <% @company.orders.each do |order| %>
+      <%= order.lines %>
+    <% end %>
+  <h4>Line Supplies:</h4>
+    <% @company.orders.each do |order| %>
+      <% order.lines.each do |line| %>
+        <%= line.supply %>
       <% end %>
-    <h4>Lines</h4>
-      <% lines.each do %>
-        <%= lines.supply %>
-      <% end %>
-  </div>
+    <% end %>
+</div>
+
+<div class='order_form'>
+  <form action="/companies/:company_id/orders" method="post">
+    <button type="Submit" value='add'>Enter the number for the month you will be re-upping:</button>
+    <input type="text" name="month" id="month">
+  </form>
+</div>
