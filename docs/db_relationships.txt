@@ -9,7 +9,7 @@
 
 Company has_many :orders
 
-Order has_one :company
+Order belongs_to :company
 
 Month has_many :orders
 
@@ -17,8 +17,8 @@ Order has_one :month
 
 Order has_many :lines
 
-Line has_one :order
+Line belong_to :order
 
 Line has_one :supply
 
-Supply has_many :lines (i think.)
+Supply belongs_to :lines
