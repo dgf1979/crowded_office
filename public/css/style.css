@@ -17,18 +17,69 @@ header {
   background: #000000;
 }
 
+
 #banner {
   width: 100%;
   height: 500px;
   position: fixed;
   top: 100px;
-  background: #707070;
+  background: white;
 }
 
 #content {
   width: 100%;
   position: relative;
   top: 400px;
-  background: #ebebeb;
-  height: 1500px;
+  background: rgb(61, 79, 109);
+  height: 815px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  position: fixed;
+  height: 100px;
+  background: #dbdbdb;
+  width: 100%;
+  z-index: 10px;
+  background: #3D4F6D;
+}
+
+p.link {
+  position: fixed;
+  height: 100px;
+  text-align: center;
+}
+
+.container1 {
+  max-width: 1500px;
+  max-length: 500px
+  background-color: black;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.container1 div {
+  background-color: white;
+  width: 100%;
+  display: inline-block;
+  display: none;
+}
+.container1 img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  position: absolute;
+}
+
+.next {
+  right: 5px;
+}
+
+.prev {
+  left: 5px;
 }
