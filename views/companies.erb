@@ -1,8 +1,7 @@
 <h3>Company List</h3>
 
-<p>Select your company to order suplies:</p>
-
 <div class='company_list'>
+  <p>Select your company to order suplies:</p>
   <% Company.all.each do |company| %>
     <a href='/companies/<%= company.id %>'><%= company.name %></a>
   <% end %>
