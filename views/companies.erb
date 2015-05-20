@@ -1,5 +1,11 @@
 <h3>Company List</h3>
 
+<div class='company_list'>
+  <% Company.all.each do |company| %>
+    <a href='/companies/<%= company.id %>'><%= company.name %></a>
+  <% end %>
+</div>
+
 <div class='company_form'>
   <form action="/companies" method="post">
     <input type="text" name="name" id="name">
@@ -7,8 +13,4 @@
   </form>
 </div>
 
-<div class='company_list'>
-  <% Company.all.each do |company| %>
-    <a href='/companies/<%= company.id %>'><%= company.name %></a>
-  <% end %>
-</div>
+
