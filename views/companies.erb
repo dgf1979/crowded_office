@@ -1,3 +1,8 @@
+<ul class="nav navbar-nav">
+  <li><a href="/">Home</a></li>
+  <li><a href="/companies">Companies</a></li>
+</ul>
+    
 <h3>Company List</h3>
 
 <form action="/companies/redirector">
@@ -14,10 +19,14 @@
   </fieldset>
 </form>
 
-<div class='form-group'>
-  <form action="/companies" method="post">
-    <p>Don't see your company? Create a new company below</p>
-    <input type="text" name="name" id="name">
+<br />
+
+<form action="/companies" method="post">
+  <fieldset>
+      <div class='form-group'>
+        <label for="new_company">Don't see your company above? Create a new company below:</label>
+        <input type="text" name="new_company" id="new_company" class="form-control">
+    </div>
     <button type="Submit" class="btn btn-primary">Add Company</button>
   </form>
 </div>
