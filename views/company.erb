@@ -14,6 +14,7 @@
 </div>
 
 <div class='order_form'>
+  <h5>Select which month of the year you would like to opt-in for a new order:</h5>
   <form action="/companies/<%= @company.id %>/orders" method="post">
     <select name="month">
       <option value="1">January</option>
@@ -29,6 +30,6 @@
       <option value="11">November</option>
       <option value="12">December</option>
     </select>
-    <input type="submit" name="month" />
+    <input type="submit" name="month" id="month">
   </form>
 </div>
