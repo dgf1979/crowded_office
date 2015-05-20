@@ -35,11 +35,9 @@
 </div>
 
 <div class='company_list'>
-<<<<<<< HEAD
     <% Company.all do |company| %>
-=======
-    <% @company.each do |company| %>
->>>>>>> 3c596f14bbd02b021329c59a9166dabbe7b131b1
+      <% @company.each do |company| %>
         <%= company.name %>
+      <% end %>
     <% end %>
 </div>
