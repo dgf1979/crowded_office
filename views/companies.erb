@@ -1,21 +1,24 @@
 <h3>Company List</h3>
 
-<div class='company_list'> 
-  <form action="/companies/redirector">
-    <p>Select your company to order suplies:</p>
-    <select name="company_options">
-      <% Company.all.each do |company| %>
-        <option value='<%= company.id %>'><%= company.name %></option>
-      <% end %>
-    </select>
-    <button type="submit">Go To Company Page</button
-  </form>
-</div>
+<form action="/companies/redirector">
+  <fieldset>
+    <div class='form-group'> 
+      <label for="company-options">Select your company to order suplies:</label>
+      <select name="company_options" class="form-control">
+        <% Company.all.each do |company| %>
+          <option value='<%= company.id %>'><%= company.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Place Order</button>
+  </fieldset>
+</form>
 
-<div class='company_form'>
+<div class='form-group'>
   <form action="/companies" method="post">
+    <p>Don't see your company? Create a new company below</p>
     <input type="text" name="name" id="name">
-    <button type="Submit" value='add'>Add Company</button>
+    <button type="Submit" class="btn btn-primary">Add Company</button>
   </form>
 </div>
 
