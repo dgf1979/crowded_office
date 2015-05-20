@@ -1,8 +1,3 @@
 <div class="orders">
-  <h1> Here are all the orders for <%= @company.name %>: </h1>
-    <%= @order.lines %>
-    <%= @order.month %>
-    <% @order.lines.each do |line| %>
-      <%= line.supply %>
-    <% end %>
+  <h1> Fill out the order form for <%= @order.month_name %> </h1>
 </div>
