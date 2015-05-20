@@ -4,8 +4,42 @@
   <a href="/companies/add">Create a New Company</a>
 </div>
 
+<div>
+
+
+  <div id="container"></div>
+  <header>
+    <div class="jumbotron" style="
+    padding-left: 0px;
+    padding-right: 5px;
+    height: 65px;
+    margin-bottom: 0px;
+    background: rgb(140, 73, 73);
+    background: rgba(0, 0, 0, 1);
+    background: #000000;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 1900px;
+    ">
+    <h1>Header</h1>
+  </header>
+
+  <div id="banner">
+    <img src="/images/office.jpg">
+  </div>
+
+  <div id="content">
+    <p>content</p>
+  </div>
+
+</div>
+
 <div class='company_list'>
+<<<<<<< HEAD
+    <% Company.all do |company| %>
+=======
     <% @company.each do |company| %>
+>>>>>>> 3c596f14bbd02b021329c59a9166dabbe7b131b1
         <%= company.name %>
     <% end %>
 </div>

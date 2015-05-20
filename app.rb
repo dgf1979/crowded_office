@@ -12,7 +12,7 @@ end
 
 #show a specific company and allow to add orders
 get('/') do
-  erb(:index)
+erb(:index)
 end
 
 #show avail. companies and have method to add/select one (READ)
