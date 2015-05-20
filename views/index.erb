@@ -5,7 +5,7 @@
 </div>
 
 <div class='company_list'>
-    <% Company.all do |company|
+    <% @company.each do |company| %>
         <%= company.name %>
     <% end %>
 </div>
