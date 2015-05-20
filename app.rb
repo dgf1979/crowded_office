@@ -42,9 +42,10 @@ end
 #show a specific order for a company and allow them to add supplies with quantities
 get('/companies/:company_id/orders/:order_id') do |company_id, order_id|
   @order = Order.find(order_id)
+  erb(:order)
 end
 
 #show a report on all orders by month, with totals
 get('/month/:month_id/orders') do |month_id|
-
+  erb(:orders)
 end
