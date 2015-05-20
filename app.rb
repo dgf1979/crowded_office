@@ -7,12 +7,13 @@ get('/test') do
   @test_var = 'Sinatra OK'
   @db = "ActiveRecord Using: #{ActiveRecord::Base.connection_config[:database].upcase}"
   erb(:test)
-  #redirect to('/')
+  redirect to('/')
 end
 
 #show a specific company and allow to add orders
 get('/') do
-
+  @company = Company.all
+  erb(:index)
 end
 
 #show avail. companies and have method to add/select one mock
