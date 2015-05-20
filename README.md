@@ -1,22 +1,27 @@
-## [APPNAME] ##
+## Crowded Office ##
 
 This application is meant to fulfill the requirements of an assignment through Epicodus code school. For more information on Epicodus, see <http://www.epicodus.com/>.
 
 ### Description ###
 
-[simple app description]
+The application is a prototype for an an application that might be offered by an office supply company or multi-office building management to consolidate office supply purchases in order to qualify for bulk quantity discounts.
 
-**Assignment:** [assignment title]
+E.g., company A in suite 101 order 200 ink pens, and company B in suite 202 order 400 ink pens. The office supply co. offers a discount at 500 pens for delivery to a single address - so by combining the two orders into one, both companies benefit from reduced supply costs.
+
+**Assignment:** Week 5 Group Project
 
 **<https://www.learnhowtoprogram.com/table-of-contents>**
 
 ### Author(s) ###
 
-Andrew Finstrom
+Drew, Leon, Frank, Stephen
 
 ### Setup ###
 ```
-    setup code or details here
+    bundle install
+    rake db:create
+    rake db:migrate
+    rake db:test:prepare (if running rspec tests)
 ```
 
 ### License ###
