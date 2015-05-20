@@ -1,10 +1,15 @@
 <h3>Company List</h3>
 
-<div class='company_list'>
-  <p>Select your company to order suplies:</p>
-  <% Company.all.each do |company| %>
-    <a href='/companies/<%= company.id %>'><%= company.name %></a>
-  <% end %>
+<div class='company_list'> 
+  <form action="/companies/redirector">
+    <p>Select your company to order suplies:</p>
+    <select name="company_options">
+      <% Company.all.each do |company| %>
+        <option value='<%= company.id %>'><%= company.name %></option>
+      <% end %>
+    </select>
+    <button type="submit">Go To Company Page</button
+  </form>
 </div>
 
 <div class='company_form'>
@@ -13,5 +18,6 @@
     <button type="Submit" value='add'>Add Company</button>
   </form>
 </div>
+
 
 
