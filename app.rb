@@ -7,28 +7,40 @@ get('/test') do
   @test_var = 'Sinatra OK'
   @db = "ActiveRecord Using: #{ActiveRecord::Base.connection_config[:database].upcase}"
   erb(:test)
-  redirect to('/')
+  #redirect to('/')
 end
 
 #show a specific company and allow to add orders
 get('/') do
-  @company = Company.all
   erb(:index)
 end
 
-#show avail. companies and have method to add/select one mock
+#show avail. companies and have method to add/select one (READ)
 get('/companies') do
-
+  erb(:companies)
 end
 
-#show a specific company and allow them to create a new order or view old orders
-get('/companies/:company_id') do |company_id|
+#add a new company with POST (CREATE)
+post('/companies') do
+  Company.create(name: params['name'])
+  redirect to('/companies')
+end
 
+#show a specific company and allow them to create a new order or view old orders (READ)
+get('/companies/:company_id') do |company_id|
+  @company = Company.find(company_id)
+end
+
+#add an order to a company with POST (CREATE)
+post('/companies/:company_id/orders') do |company_id|
+  company = Company.find(company_id)
+  order = company.orders.create(month: params['month'])
+  redirect to("/companies/#{company_id}/orders/#{order.id}")
 end
 
 #show a specific order for a company and allow them to add supplies with quantities
 get('/companies/:company_id/orders/:order_id') do |company_id, order_id|
-
+  @order = Order.find(order_id)
 end
 
 #show a report on all orders by month, with totals
