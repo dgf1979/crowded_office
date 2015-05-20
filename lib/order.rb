@@ -6,6 +6,8 @@ class Order < ActiveRecord::Base
   validates :month_id, presence: true
   validates :month_id, :inclusion => { :in => 1..12 }
 
+  alias_attribute :month, :month_id
+
   def month_name
     return Date::MONTHNAMES[self.month_id]
   end

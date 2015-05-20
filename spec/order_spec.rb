@@ -13,4 +13,10 @@ describe(Order) do
     order = Order.create(company_id: 4, month_id: 8)
     expect(order.month_name).to(eq('August'))
   end
+
+  it('aliases the month_id column to the month attribute in the model') do
+    order = Order.create(company_id: 4, month: 8)
+    expect(order.month_id).to(eql(8))
+    expect(order.month).to(eql(8))
+  end
 end
