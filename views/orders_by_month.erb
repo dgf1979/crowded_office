@@ -1,0 +1,13 @@
+<% @orders.each do |order| %>
+  <% company = Company.find(order.company_id) %>
+  Company:<%= company.name %> <br>
+  <% order.lines.each do |line| %>
+    <% supply = Supply.find(line.supply_id) %>
+    <br>-Item: <%= supply.name %>
+    <br>-Quantity: <%= line.quantity %>
+    <br>-Unit Price: <%= supply.unit_price %>
+    <br>-Subtotal: <%= supply.unit_price * line.quantity %>
+    <br>
+  <% end %>
+  <br><br>
+<% end %>
