@@ -26,15 +26,16 @@ post('/companies') do
   redirect to('/companies')
 end
 
-get('/companies/redirector') do 
+get('/companies/redirector') do
   redirect to ("/companies/#{params['company_options']}")
 end
 
 #show a specific company and allow them to create a new order or view old orders (READ)
 get('/companies/:company_id') do |company_id|
   @company = Company.find(company_id)
+  erb(:company)
 end
-  
+
 #add an order to a company with POST (CREATE)
 post('/companies/:company_id/orders') do |company_id|
   company = Company.find(company_id)
@@ -45,6 +46,7 @@ end
 #show a specific order for a company and allow them to add supplies with quantities
 get('/companies/:company_id/orders/:order_id') do |company_id, order_id|
   @order = Order.find(order_id)
+  erb(:order)
 end
 
 #show a report on all orders by month, with totals
