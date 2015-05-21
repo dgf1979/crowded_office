@@ -22,8 +22,8 @@ end
 
 #add a new company with POST (CREATE)
 post('/companies') do
-  Company.create(name: params['name'])
-  redirect to('/companies')
+  company = Company.create(name: params['name'])
+  redirect to("/companies/#{company.id}")
 end
 
 get('/companies/redirector') do
