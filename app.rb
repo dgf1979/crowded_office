@@ -105,6 +105,13 @@ patch('/supplies/:supply_id') do |supply_id|
   redirect to("/supplies")
 end
 
+####
+LINE
+delete('/companies/:company_id/orders/:order_id/lines/:line_id') do |company_id, order_id, line_id|
+  Line.find(line_id).destroy
+  redirect to("/companies/#{company_id}/orders/#{order_id}")
+end
+
 ###
 #admin reset
 get('/admin/reset') do
