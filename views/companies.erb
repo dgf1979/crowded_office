@@ -1,8 +1,16 @@
+<<<<<<< HEAD
+=======
+<ul class="nav navbar-nav">
+  <li><a href="/">Home</a></li>
+  <li><a href="/companies">Companies</a></li>
+</ul>
+
+>>>>>>> 9ef02df5921cc7d6da8a18fe0fe31b2f8e30a548
 <h3>Company List</h3>
 
 <form action="/companies/redirector">
   <fieldset>
-    <div class='form-group'> 
+    <div class='form-group'>
       <label for="company-options">Select your company to order suplies:</label>
       <select name="company_options" class="form-control">
         <% Company.all.each do |company| %>
@@ -20,11 +28,8 @@
   <fieldset>
       <div class='form-group'>
         <label for="new_company">Don't see your company above? Create a new company below:</label>
-        <input type="text" name="new_company" id="new_company" class="form-control">
+        <input type="text" name="name" id="name" class="form-control">
     </div>
     <button type="Submit" class="btn btn-primary">Add Company</button>
   </form>
 </div>
-
-
-
