@@ -8,6 +8,10 @@ body {
   text-align: center;
 }
 
+tbody {
+  text-align: left;
+}
+
 header {
   height: 100px;
   background: #dbdbdb;
