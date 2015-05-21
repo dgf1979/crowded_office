@@ -65,7 +65,7 @@ end
 
 #show a specific order for a company and allow them to add supplies with quantities
 get('/companies/:company_id/orders/:order_id') do |company_id, order_id|
-  @order = Order.find(order_id)
+  @order = Order.find(order_id.to_i)
   erb(:order)
 end
 
@@ -114,4 +114,17 @@ end
 delete('/supplies/:supply_id') do |supply_id|
   Supply.find(supply_id).destroy
   redirect to('/supplies')
+end
+
+###
+#admin reset
+get('/admin/reset') do
+  erb(:admin_reset)
+end
+post('/admin/reset') do
+  Company.all.each { |company| company.destroy }
+  Order.all.each { |order| order.destroy }
+  Line.all.each { |line| line.destroy }
+  Supply.all.each { |supply| supply.destroy }
+  redirect to('/')
 end
