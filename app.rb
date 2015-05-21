@@ -74,6 +74,7 @@ end
 #show a report on all orders by month, with totals
 get('/month/:month_id/orders') do |month_id|
   @orders = Order.where("month_id = ?", month_id)
+  @discount = Discount
   erb(:orders_by_month)
 end
 
