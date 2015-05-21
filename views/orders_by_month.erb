@@ -24,6 +24,7 @@
         <td class="info"><%= company.name %></td>
         <td class="info"><%= line.quantity %></td>
         <td class="info"><%= supply.unit_price %></td>
+        <td class="success"><%= @discount.calculate(line.quantity, supply.unit_price) %></td>
       </tr>
 
       <% end %>
