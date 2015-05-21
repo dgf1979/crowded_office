@@ -9,6 +9,11 @@
 <br />
 <ul>
   <% Supply.all.each do |supply| %>
-    <li><a href='/supplies/<%= supply.id %>'><%= supply.name %></a> ($<%= supply.unit_price %> each)</li>
+    <li>
+      <a href='/supplies/<%= supply.id %>'><%= supply.name %></a>($<%= supply.unit_price %> each)
+      <a href='/supplies/<%= supply.id %>/delete'>
+        <span class="glyphicon glyphicon-remove-circle warning" aria-hidden="true">DELETE</span>
+      </a>
+    </li>
   <% end %>
 </ul>
