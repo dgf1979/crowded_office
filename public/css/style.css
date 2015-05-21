@@ -12,7 +12,7 @@ header {
   height: 100px;
   background: #dbdbdb;
   width: 100%;
-  z-index: 99999;
+  z-index: 9999;
   position: fixed;
   background: #FFFFFF;
 }
@@ -40,7 +40,7 @@ header {
   top: 400px;
   z-index: 100px;
   background: rgb(61, 79, 109);
-  height: 600px;
+  height: 800px;
 }
 
 ul {

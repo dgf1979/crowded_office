@@ -52,6 +52,17 @@ patch('/companies/:company_id/orders/:order_id') do |company_id, order_id|
   redirect to("/companies/#{company_id}/orders/#{order.id}")
 end
 
+#cancel an order (DELETE)
+delete('/companies/:company_id/orders/:order_id') do |company_id, order_id|
+  order = Order.find(order_id).destroy
+  redirect to("/companies/#{company_id}")
+end
+#cancel order - alternate GET method
+get('/companies/:company_id/orders/:order_id/delete') do |company_id, order_id|
+  order = Order.find(order_id).destroy
+  redirect to("/companies/#{company_id}")
+end
+
 #show a specific order for a company and allow them to add supplies with quantities
 get('/companies/:company_id/orders/:order_id') do |company_id, order_id|
   @order = Order.find(order_id)
