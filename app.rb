@@ -77,6 +77,11 @@ get('/month/:month_id/orders') do |month_id|
   erb(:orders_by_month)
 end
 
+#list all collective orders by month
+get('/orders') do
+  erb(:orders)
+end
+
 ####
 #SUPPLIES
 
