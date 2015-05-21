@@ -6,7 +6,7 @@
   <fieldset>
     <div class='form-group'>
       <label for="company-options">Select your company to order suplies:</label>
-      <select name="company_options" class="form-control">
+      <select name="company_options" class="dropdown">
         <% Company.all.each do |company| %>
           <option value='<%= company.id %>'><%= company.name %></option>
         <% end %>
