@@ -44,6 +44,14 @@ post('/companies/:company_id/orders') do |company_id|
   redirect to("/companies/#{company_id}/orders/#{order.id}")
 end
 
+#fill out an order with PATCH (UPDATE)
+patch('/companies/:company_id/orders/:order_id') do |company_id, order_id|
+  order = Order.find(order_id)
+  order.lines.create({ supply_id: params['supply_id'], quantity: params['quantity'] })
+
+  redirect to("/companies/#{company_id}/orders/#{order.id}")
+end
+
 #show a specific order for a company and allow them to add supplies with quantities
 get('/companies/:company_id/orders/:order_id') do |company_id, order_id|
   @order = Order.find(order_id)
