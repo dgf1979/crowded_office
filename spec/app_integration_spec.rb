@@ -13,7 +13,7 @@ describe('Sinatra framework check', { :type => :feature }) do
   end
 end
 
-describe('Application Integration', { :type => :feature }) do
+describe('Application Integration: ', { :type => :feature }) do
   describe('Company:') do
     it('lists companies') do
       Company.create(name: 'Epicodus')
@@ -45,8 +45,6 @@ describe('Application Integration', { :type => :feature }) do
       expect(page).to have_content('Multnomah County')
       expect(page).to have_content('Bic Pens')
       expect(page).to have_content('Red Swingline')
-      expect(page).to have_content('400')
-      expect(page).to have_content('16')
     end
   end
 end
