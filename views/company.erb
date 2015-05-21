@@ -5,9 +5,14 @@
 <div class="company_orders">
   <h4>Open Orders:</h4>
   <ul>
-      <% @company.orders.each do |order| %>
-        <li><a href='/companies/<%= @company.id %>/orders/<%= order.month_id %>'><%= order.month_name%></a></li>
-      <% end %>
+    <% @company.orders.each do |order| %>
+      <li>
+        <a href='/companies/<%= @company.id %>/orders/<%= order.month_id %>'><%= order.month_name%></a>
+        <a href='/companies/<%= @company.id %>/orders/delete'>
+          <span class="glyphicon glyphicon-remove-circle warning" aria-hidden="true">Cancel Order</span>
+        </a>
+      </li>
+    <% end %>
   <ul>
 </div>
 
