@@ -10,5 +10,11 @@ class Order < ActiveRecord::Base
 
   def month_name
     return Date::MONTHNAMES[self.month_id]
+
+    private
+
+    define_method(:check_order) do
+      if self.order == nil || self.order <= 0
+        self.order = 1
   end
 end
