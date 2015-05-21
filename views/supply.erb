@@ -1,0 +1,15 @@
+Details of Item:
+
+<form action='/supplies/<%= @supply.id %>' method='post'>
+  <input type='hidden' name='_method' value='patch'>
+  Item Name: <input type='text' id='name' name='name' value='<%= @supply.name %>'>
+  <br />
+  Unit Price: <input type="number" name="unit_price" min="0.01" max="9999" step="0.01" size="4" value='<%= @supply.unit_price %>'>
+  <br />
+  <button type='submit'>Update</button>
+</form>
+
+<form action='/supplies/<%= @supply.id %>' method='post'>
+  <input type='hidden' name='_method' value='delete'>
+  <button type='submit'>Delete</button>
+</form>
