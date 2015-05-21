@@ -7,7 +7,6 @@ gem("pg")
 gem("pry")
 gem("launchy")
 
-
 group(:production) do
   gem("sinatra")
 end
