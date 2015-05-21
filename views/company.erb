@@ -7,7 +7,7 @@
   <ul>
     <% @company.orders.each do |order| %>
       <li>
-        <a href='/companies/<%= @company.id %>/orders/<%= order.month_id %>'><%= order.month_name%></a>
+        <a href='/companies/<%= @company.id %>/orders/<%= order.id %>'><%= order.month_name%></a>
         <a href='/companies/<%= @company.id %>/orders/<%= order.id %>/delete'>
           <span class="glyphicon glyphicon-remove-circle warning" aria-hidden="true">Cancel Order</span>
         </a>
