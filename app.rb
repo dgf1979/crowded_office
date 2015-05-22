@@ -106,7 +106,7 @@ patch('/supplies/:supply_id') do |supply_id|
 end
 
 ####
-LINE
+#LINE
 delete('/companies/:company_id/orders/:order_id/lines/:line_id') do |company_id, order_id, line_id|
   Line.find(line_id).destroy
   redirect to("/companies/#{company_id}/orders/#{order_id}")
