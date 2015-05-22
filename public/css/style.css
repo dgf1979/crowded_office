@@ -9,7 +9,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form {
 #name{
   width: 50%;
   margin-left: 350px;
-  
+
 }
 body {
   text-align: center;
@@ -53,6 +53,8 @@ header {
   top: 650px;
   background: rgba(61, 79, 109, .26);
   height: 800px;
+  color: #969696;
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 
 ul {
@@ -101,6 +103,7 @@ button {
 
 .row {
   length: 175px;
+  color: #969696;
 }
 
 #wrapper {
