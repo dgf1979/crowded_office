@@ -27,18 +27,18 @@
     <tr>
       <td class="active o"><%= line_with_type.order.company.name %></td>
       <td class="active o"><%= line_with_type.quantity %></td>
-      <td class="active o"><%= supply.unit_price %></td>
-      <td class="active o"><%= supply.unit_price * line_with_type.quantity %></td>
+      <td class="active o"><%= "$%5.2f" % supply.unit_price %></td>
+      <td class="active o"><%= "$%5.2f" % (supply.unit_price * line_with_type.quantity) %></td>
     </tr>
   <% end %>
 
     <tr>
       <td class="warning o">TOTALS:</td>
       <td class="info o"><%= item_count_total %></td>
-      <td class="info o"><%= supply.unit_price %></td>
-      <td class="info o"><%= total = item_count_total * supply.unit_price %></td>
-      <td class="success o"><%= discount = item_count_total * @discount.calculate(item_count_total, supply.unit_price)  %></td>
-      <td class="success o"><%= savings = total - discount %></td>
+      <td class="info o"><%= "$%5.2f" % supply.unit_price %></td>
+      <td class="info o"><%= "$%5.2f" % (total = item_count_total * supply.unit_price) %></td>
+      <td class="success o"><%= "$%5.2f" % (discount = item_count_total * @discount.calculate(item_count_total, supply.unit_price))  %></td>
+      <td class="success o"><%= "$%5.2f" % (savings = total - discount) %></td>
     </tr>
 
   </table>
