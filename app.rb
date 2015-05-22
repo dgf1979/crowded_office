@@ -62,7 +62,12 @@ end
 #REPORTS
 #show a report on all orders by month, with totals
 get('/month/:month_id/orders') do |month_id|
-  @orders = Order.where("month_id = ?", month_id)
+  #@orders = Order.where("month_id = ?", month_id)
+  sql = "SELECT DISTINCT supply_id FROM lines, orders WHERE orders.month_id = #{month_id} AND lines.order_id = orders.id;"
+  @supply_types = ActiveRecord::Base.connection.execute(sql)
+
+  @order_lines = Line.joins(:order).where('orders.month_id = ?', month_id)
+
   @discount = Discount
   erb(:orders_by_month)
 end
