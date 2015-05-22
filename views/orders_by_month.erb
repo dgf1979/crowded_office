@@ -17,13 +17,6 @@
         <th>Subtotal</th>
         <th>Discount Price</th>
         <th>Savings</th>
-
-        <th>Regular Price</th>
-        <th>Regular Total</th>
-        <th>Discount Price</th>
-        <th>Total Price</th>
-        <th>Money Saved</td>
-
       </tr>
     </thead>
   </tbody>
@@ -39,18 +32,6 @@
     </tr>
   <% end %>
 
-      <tr>
-        <th scope="row"><%= line.id %></th>
-        <td class="active o"><%= supply.name %></td>
-        <td class="active o"><%= company.name %></td>
-        <td class="active o"><%= line.quantity %></td>
-        <td class="danger o">$<%= supply.unit_price %></td>
-        <td class="warning o">$<%= reg_total = line.quantity * supply.unit_price %></td>
-        <td class="info o">$<%= discount_price = @discount.calculate(line.quantity, supply.unit_price) %></td>
-        <td class="warning o">$<%= total = discount_price * line.quantity %></td>
-        <td class="success o">$<%= reg_total - total %></td>
-      </tr
-
     <tr>
       <td class="warning o">TOTALS:</td>
       <td class="info o"><%= item_count_total %></td>
@@ -63,4 +44,3 @@
   </table>
 
 <% end %>
-
