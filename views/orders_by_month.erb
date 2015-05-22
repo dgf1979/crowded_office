@@ -9,6 +9,8 @@
         <th>Quantity Ordered</th>
         <th>Regular Price</th>
         <th>Discount Price</th>
+        <th>Total Price</th>
+        <th> Money Saved</td>
       </tr>
     </thead>
     <tbody>
@@ -20,11 +22,13 @@
 
       <tr>
         <th scope="row"><%= line.id %></th>
-        <td class="info"><%= supply.name %></td>
-        <td class="info"><%= company.name %></td>
-        <td class="info"><%= line.quantity %></td>
-        <td class="info"><%= supply.unit_price %></td>
-        <td class="success"><%= @discount.calculate(line.quantity, supply.unit_price) %></td>
+        <td class="active"><%= supply.name %></td>
+        <td class="active"><%= company.name %></td>
+        <td class="active"><%= line.quantity %></td>
+        <td class="active"><%= supply.unit_price %></td>
+        <td class="success"><%= discount = @discount.calculate(line.quantity, supply.unit_price) %></td>
+        <td class="active"><%= discount * line.quantity %></td>
+        <td class="success"><%= line.quantity * supply.unit_price - discount %></td>
       </tr>
 
       <% end %>
