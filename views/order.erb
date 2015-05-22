@@ -14,7 +14,7 @@
 
 <br />
 
-<table>
+<table class="table table-bordered">
   <tr>
     <th>Supply Item</th>
     <th>Quantity</th>
@@ -28,6 +28,12 @@
     <td><%= line.quantity %></td>
     <td><%= supply.unit_price %></td>
     <td><%= supply.unit_price * line.quantity %></td>
+    <td>
+      <form action='/companies/<%= @order.company.id %>/orders/<%= @order.id %>/lines/<%= line.id %>' method='post'>
+        <input type='hidden' name='_method' value='delete'>
+        <button type='submit'>Remove</button>
+      </form>
+    </td>
   </tr>
   <% end %>
 </table>

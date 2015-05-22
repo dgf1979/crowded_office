@@ -17,6 +17,6 @@ class Order < ActiveRecord::Base
     define_method(:check_order) do
       if self.order == nil || self.order <= 0
         self.order = 1
-    end
+      end
   end
 end
