@@ -3,11 +3,13 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form {
   padding: 0px;
   border: 0px;
 }
-
+#button {
+  margin-left: -50px;
+}
 #name{
   width: 50%;
   margin-left: 350px;
-  
+
 }
 body {
   text-align: center;
@@ -51,6 +53,8 @@ header {
   top: 650px;
   background: rgba(61, 79, 109, .26);
   height: 800px;
+  color: white;
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 
 ul {
@@ -62,6 +66,7 @@ ul {
 }
 
 .container1 {
+  overflow: hidden;
   max-width: 1500px;
   max-length: 500px
   background-color: black;
@@ -99,6 +104,7 @@ button {
 
 .row {
   length: 175px;
+  color: #969696;
 }
 
 #wrapper {
@@ -107,4 +113,12 @@ button {
 
 #wrapper2 {
   z-index: 9999;
+}
+
+.o{
+  color: black;
+}
+
+textarea:focus, input:focus {
+  color: black;
 }

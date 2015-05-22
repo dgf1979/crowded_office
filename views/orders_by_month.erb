@@ -13,14 +13,23 @@
       <tr>
         <th></th>
         <th>Quantity Ordered</th>
+<<<<<<< HEAD
         <th>Unit Price</th>
         <th>Subtotal</th>
         <th>Discount Price</th>
         <th>Savings</th>
+=======
+        <th>Regular Price</th>
+        <th>Regular Total</th>
+        <th>Discount Price</th>
+        <th>Total Price</th>
+        <th>Money Saved</td>
+>>>>>>> 1e763225a50a2a078d8b7eb99acf9afaa5e86fbb
       </tr>
     </thead>
   </tbody>
 
+<<<<<<< HEAD
   <% lines_with_type.each do |line_with_type| %>
     <% item_count_total += line_with_type.quantity %>
     <% regular_price_subtotal += supply.unit_price %>
@@ -31,6 +40,19 @@
       <td class="active o"><%= "$%5.2f" % (supply.unit_price * line_with_type.quantity) %></td>
     </tr>
   <% end %>
+=======
+      <tr>
+        <th scope="row"><%= line.id %></th>
+        <td class="active o"><%= supply.name %></td>
+        <td class="active o"><%= company.name %></td>
+        <td class="active o"><%= line.quantity %></td>
+        <td class="danger o">$<%= supply.unit_price %></td>
+        <td class="warning o">$<%= reg_total = line.quantity * supply.unit_price %></td>
+        <td class="info o">$<%= discount_price = @discount.calculate(line.quantity, supply.unit_price) %></td>
+        <td class="warning o">$<%= total = discount_price * line.quantity %></td>
+        <td class="success o">$<%= reg_total - total %></td>
+      </tr
+>>>>>>> 1e763225a50a2a078d8b7eb99acf9afaa5e86fbb
 
     <tr>
       <td class="warning o">TOTALS:</td>

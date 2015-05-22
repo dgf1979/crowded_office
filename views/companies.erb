@@ -8,11 +8,11 @@
       <label for="company-options">Select your company to order suplies:</label>
       <select name="company_options" class="dropdown">
         <% Company.all.each do |company| %>
-          <option value='<%= company.id %>'><%= company.name %></option>
+          <option value='<%= company.id %>'><font color="black"><%= company.name %></font></option>
         <% end %>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary">Place Order</button>
+    <button id = "button" type="submit" class="btn btn-primary">Place Order</button>
   </fieldset>
 </form>
 
@@ -24,6 +24,6 @@
         <label for="new_company">Don't see your company above? Create a new company below:</label>
         <input type="text" name="name" id="name" class="form-control">
     </div>
-    <button type="Submit" class="btn btn-primary">Add Company</button>
+    <button id="button" type="Submit" class="btn btn-primary">Add Company</button>
   </form>
 </div>
