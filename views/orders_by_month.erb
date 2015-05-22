@@ -8,9 +8,10 @@
         <th>Company Name</th>
         <th>Quantity Ordered</th>
         <th>Regular Price</th>
+        <th>Regular Total</th>
         <th>Discount Price</th>
         <th>Total Price</th>
-        <th> Money Saved</td>
+        <th>Money Saved</td>
       </tr>
     </thead>
     <tbody>
@@ -22,14 +23,15 @@
 
       <tr>
         <th scope="row"><%= line.id %></th>
-        <td class="active"><%= supply.name %></td>
-        <td class="active"><%= company.name %></td>
-        <td class="active"><%= line.quantity %></td>
-        <td class="active"><%= supply.unit_price %></td>
-        <td class="success"><%= discount = @discount.calculate(line.quantity, supply.unit_price) %></td>
-        <td class="active"><%= discount * line.quantity %></td>
-        <td class="success"><%= line.quantity * supply.unit_price - discount %></td>
-      </tr>
+        <td class="active o"><%= supply.name %></td>
+        <td class="active o"><%= company.name %></td>
+        <td class="active o"><%= line.quantity %></td>
+        <td class="danger o">$<%= supply.unit_price %></td>
+        <td class="warning o">$<%= reg_total = line.quantity * supply.unit_price %></td>
+        <td class="info o">$<%= discount_price = @discount.calculate(line.quantity, supply.unit_price) %></td>
+        <td class="warning o">$<%= total = discount_price * line.quantity %></td>
+        <td class="success o">$<%= reg_total - total %></td>
+      </tr
 
       <% end %>
         <% end %>
