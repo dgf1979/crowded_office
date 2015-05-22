@@ -11,6 +11,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form {
 }
 body {
   text-align: center;
+  background-color: black;
 }
 
 tbody {
@@ -23,7 +24,7 @@ header {
   width: 100%;
   z-index: 9999;
   position: fixed;
-  background: #FFFFFF;
+  background: black;
 }
 
 .navbar-default {
@@ -32,7 +33,7 @@ header {
 }
 
 .footer {
-  z-index: 50px;
+  z-index: 50;
 }
 
 #banner {
@@ -40,15 +41,15 @@ header {
   height: 500px;
   position: fixed;
   top: 100px;
+  z-index: 0;
   background: black;
 }
 
 #content {
   width: 100%;
   position: relative;
-  top: 400px;
-  z-index: 100px;
-  background: rgb(61, 79, 109);
+  top: 650px;
+  background: rgba(61, 79, 109, .26);
   height: 800px;
 }
 
@@ -56,13 +57,20 @@ ul {
   list-style-type: none;
 }
 
+.container {
+  z-index: 99999;
+}
+
 .container1 {
   max-width: 1500px;
   max-length: 500px
   background-color: black;
+  z-index: 9999;
   margin: 0 auto;
   text-align: center;
   position: relative;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .container1 div {
   background-color: white;
@@ -73,6 +81,8 @@ ul {
 .container1 img {
   width: 100%;
   height: auto;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 button {
@@ -85,4 +95,16 @@ button {
 
 .prev {
   left: 5px;
+}
+
+.row {
+  length: 175px;
+}
+
+#wrapper {
+  background-color: black;
+}
+
+#wrapper2 {
+  z-index: 9999;
 }
