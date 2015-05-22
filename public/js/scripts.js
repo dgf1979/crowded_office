@@ -19,7 +19,7 @@ $(document).ready(function(){
         currentIndex = 0;
       }
       cycleItems();
-    }, 6000);
+    }, 8000);
   }
 
   $('.next').click(function () {
