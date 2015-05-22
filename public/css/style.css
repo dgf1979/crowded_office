@@ -114,3 +114,11 @@ button {
 #wrapper2 {
   z-index: 9999;
 }
+
+.o{
+  color: black;
+}
+
+textarea:focus, input:focus {
+  color: black;
+}
