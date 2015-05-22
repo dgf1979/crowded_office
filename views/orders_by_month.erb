@@ -1,26 +1,46 @@
-<div>
-  <table class="table">
-    <caption>Monthly Invoice</caption>
+<h2>Consolidated Order</h2>
+
+<% @supply_types.each do |supply_type| %>
+  <% supply_id = supply_type["supply_id"].to_i %>
+  <% supply = Supply.find(supply_id) %>
+  <% item_count_total = 0 %>
+  <% regular_price_subtotal = 0 %>
+  <% lines_with_type = @order_lines.where('supply_id = ?', supply_id) %>
+
+  <table class='table'>
+    <caption><%= supply.name %></caption>
     <thead>
       <tr>
-        <th>Line Number</th>
-        <th>Product Name</th>
-        <th>Company Name</th>
+        <th></th>
         <th>Quantity Ordered</th>
+<<<<<<< HEAD
+        <th>Unit Price</th>
+        <th>Subtotal</th>
+        <th>Discount Price</th>
+        <th>Savings</th>
+=======
         <th>Regular Price</th>
         <th>Regular Total</th>
         <th>Discount Price</th>
         <th>Total Price</th>
         <th>Money Saved</td>
+>>>>>>> 1e763225a50a2a078d8b7eb99acf9afaa5e86fbb
       </tr>
     </thead>
-    <tbody>
+  </tbody>
 
-      <% @orders.each do |order| %>
-        <% company = Company.find(order.company_id) %>
-        <% order.lines.each do |line| %>
-          <% supply = Supply.find(line.supply_id) %>
-
+<<<<<<< HEAD
+  <% lines_with_type.each do |line_with_type| %>
+    <% item_count_total += line_with_type.quantity %>
+    <% regular_price_subtotal += supply.unit_price %>
+    <tr>
+      <td class="active o"><%= line_with_type.order.company.name %></td>
+      <td class="active o"><%= line_with_type.quantity %></td>
+      <td class="active o"><%= "$%5.2f" % supply.unit_price %></td>
+      <td class="active o"><%= "$%5.2f" % (supply.unit_price * line_with_type.quantity) %></td>
+    </tr>
+  <% end %>
+=======
       <tr>
         <th scope="row"><%= line.id %></th>
         <td class="active o"><%= supply.name %></td>
@@ -32,10 +52,17 @@
         <td class="warning o">$<%= total = discount_price * line.quantity %></td>
         <td class="success o">$<%= reg_total - total %></td>
       </tr
+>>>>>>> 1e763225a50a2a078d8b7eb99acf9afaa5e86fbb
 
-      <% end %>
-        <% end %>
+    <tr>
+      <td class="warning o">TOTALS:</td>
+      <td class="info o"><%= item_count_total %></td>
+      <td class="info o"><%= "$%5.2f" % supply.unit_price %></td>
+      <td class="info o"><%= "$%5.2f" % (total = item_count_total * supply.unit_price) %></td>
+      <td class="success o"><%= "$%5.2f" % (discount = item_count_total * @discount.calculate(item_count_total, supply.unit_price))  %></td>
+      <td class="success o"><%= "$%5.2f" % (savings = total - discount) %></td>
+    </tr>
 
-    </tbody>
   </table>
-</div>
+
+<% end %>
